@@ -50,7 +50,10 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+    },
+
+    setup_handlers = {
+      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
     },
   },
 
