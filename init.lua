@@ -55,6 +55,39 @@ return {
     setup_handlers = {
       rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
     },
+
+    mappings = {
+      n = {
+        ["<leader>ra"] = {
+          function()
+            local ha = require("rust-tools").hover_actions
+            if ha then
+              ha.hover_actions()
+            end
+          end,
+          desc = "Hover actions"
+        },
+        ["<leader>rr"] = {
+          function()
+            require("rust-tools").runnables.runnables()
+          end,
+          desc = "Runnables"
+        },
+        ["<leader>rp"] = {
+          function()
+            require("rust-tools").parent_module.parent_module()
+          end,
+          desc = "Parent module"
+        },
+        ["<leader>rc"] = {
+          function()
+            require("rust-tools").open_cargo_toml.open_cargo_toml()
+          end,
+          desc = "Cargo.toml"
+        },
+        ["<leader>r"] = { name = "Rust tools" }
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options

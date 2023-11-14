@@ -32,6 +32,11 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    --["<leader>ra"] = {
+    --  require("rust-tools").hover_actions.hover_actions,
+     -- desc = "Hover actions",
+    --},
+    --["<leader>r"] = { name = "Rust tools" }
   },
   t = {
     -- setting a mapping to false will disable it
